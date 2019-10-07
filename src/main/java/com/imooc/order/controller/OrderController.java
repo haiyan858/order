@@ -54,7 +54,7 @@ public class OrderController {
      * 4、扣库存（调用商品服务)
      * 库存的数据库
      * <p>
-     * 5、订单入库
+     * 5、订单入库(整合接口打通下单流程feign)
      */
 
     @PostMapping("/create")

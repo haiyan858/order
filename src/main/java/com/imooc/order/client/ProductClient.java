@@ -17,11 +17,21 @@ public interface ProductClient {
     @GetMapping("/msg")
     String productMsg();
 
-    //@RequestBody 注解必须用 @PostMapping 而不能用@GetMapping（报错405)
-    //@GetMapping的使用场景：无参数传入，或者@RequestParam，或者@PathVariable
+    /**
+     * 查询商品信息
+     *
+     * //@RequestBody 注解必须用 @PostMapping 而不能用@GetMapping（报错405)
+     * //@GetMapping的使用场景：无参数传入，或者@RequestParam，或者@PathVariable
+     * @param productIdList
+     * @return
+     */
     @PostMapping("/product/listForOrder")
     List<ProductInfo> listForOrder(@RequestBody List<String> productIdList);
 
+    /**
+     * 扣库存
+     * @param cartDTOList
+     */
     @PostMapping("/product/decreaseStock")
     void decreaseStock(@RequestBody List<CartDTO> cartDTOList);
 }
