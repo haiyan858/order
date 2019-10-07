@@ -60,6 +60,22 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>2.1.0.RELEASE</version>
         </dependency>
+        <!--
+        报错如下：
+        com.netflix.client.ClientException: Load balancer does not have available server for client: product
+        解决方法1 ：添加依赖 spring-cloud-starter-eureka
+        解决方法2 ：添加配置，在客户端的application.yml
+        ribbon:
+          eureka:
+            enabled: true
+        -->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+            <version>1.3.1.RELEASE</version>
+        </dependency>-->
+
+
     </dependencies>
 
     <dependencyManagement>
